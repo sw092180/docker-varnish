@@ -29,6 +29,9 @@ RUN chmod 0777 /start /parse
 RUN chown -R varnish:varnish /etc/varnish
 RUN chmod -R 0777 /etc/varnish
 
+RUN chown -R varnish:varnish /var/lib/varnish
+RUN chmod -R 0777 /var/lib/varnish
+
 USER varnish
 
 CMD ["/start"]
