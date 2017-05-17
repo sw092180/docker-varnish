@@ -24,6 +24,11 @@ EXPOSE 80
 ADD parse /parse
 ADD start /start
 
-RUN chmod 0755 /start /parse
+RUN chmod 0777 /start /parse
+
+RUN chown -R varnish:varnish /etc/varnish
+RUN chmod -R 0777 /etc/varnish
+
+USER varnish
 
 CMD ["/start"]
